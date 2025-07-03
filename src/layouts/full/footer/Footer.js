@@ -9,8 +9,7 @@ const Footer = () => {
                 © {new Date().getFullYear()} All rights reserved by{" "}
                 <Link to="https://mitacorp.vn/">
                     <Typography color='primary.main' component='span'>
-                        ABCDEF.com</Typography> <h1 style={{ color: 'red' }}>Nội dung mới 123</h1>
-
+                        mitacorp.vn</Typography>
                 </Link>{" "}
             </Typography>
         </Box>

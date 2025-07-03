@@ -7,6 +7,7 @@ const BlankLayout = lazy(() => import('../layouts/blank/BlankLayout'));
 
 /* ****Pages***** */
 const Dashboard = lazy(() => import('../views/dashboard/Dashboard'))
+const Product = lazy(() => import('../views/products/Product'))
 const SamplePage = lazy(() => import('../views/sample-page/SamplePage'))
 const Error = lazy(() => import('../views/authentication/Error'));
 const Register = lazy(() => import('../views/authentication/Register'));
@@ -30,6 +31,7 @@ const Router = [
     children: [
       { path: '/', element: <Navigate to="/dashboard" /> },
       { path: '/dashboard', exact: true, element: <Dashboard /> },
+      { path: '/product', exact: true, element: <Product /> },
       { path: '/sample-page', exact: true, element: <SamplePage /> },
       { path: "/tables/basic-table", element: <BasicTable /> },
       { path: "/form-layouts", element: <FormLayouts /> },
