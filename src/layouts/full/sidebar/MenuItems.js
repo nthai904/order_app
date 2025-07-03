@@ -101,7 +101,7 @@ const Menuitems = [
   },
   {
     id: uniqueId(),
-    title: 'Frontend pages',
+    title: 'Quản lý sản phẩm',
     icon: IconAppWindow,
     href: 'https://flexy-react-main.netlify.app/frontend-pages/',
 
