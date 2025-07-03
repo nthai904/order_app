@@ -12,7 +12,7 @@ import MonthlyEarnings from './components/MonthlyEarnings'
 
 const Dashboard = () => {
   return (
-    <PageContainer title='Dashboard' description='this is Dashboard'>
+    <PageContainer title='Bảng điều khiển' description='Trang bảng điêu khiển'>
       <Box>
         <Grid container spacing={3}>
           <Grid item size={{ xs: 12 }}>

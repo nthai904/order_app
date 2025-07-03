@@ -71,7 +71,7 @@ const Sidebar = (props) => {
         {/* ------------------------------------------- */}
         <SidebarItems />
       </Scrollbar>
-      <Upgrade />
+
     </Drawer>
   );
 };
