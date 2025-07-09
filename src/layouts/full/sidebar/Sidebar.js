@@ -9,7 +9,6 @@ const Sidebar = (props) => {
   const sidebarWidth = '270px';
 
 
-
   if (lgUp) {
     return (
       <Box
@@ -30,7 +29,7 @@ const Sidebar = (props) => {
               sx: {
                 width: sidebarWidth,
                 boxSizing: 'border-box',
-                top: '72px',
+                top: '12px',
               },
             }
           }}

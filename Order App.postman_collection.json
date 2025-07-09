@@ -1,0 +1,578 @@
+{
+	"info": {
+		"_postman_id": "aabbab7a-8caa-417e-a2a6-23857e412623",
+		"name": "Order App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37341753"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OrderApp}}/product",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{OrderApp}}/product/19",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"product",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletedList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OrderApp}}/product/deleted/list",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"product",
+								"deleted",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/D:/Download/ca_phe.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Đen đá mới",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "Thơm ngon trọn vị",
+									"type": "text"
+								},
+								{
+									"key": "id_cat",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "variants",
+									"value": "[{\"price\":150000,\"sale_price\":120000,\"image\":\"\",\"attributes\":[1]},{\"price\":155000,\"sale_price\":125000,\"image\":\"\",\"attributes\":[2]},{\"price\":160000,\"sale_price\":130000,\"image\":\"\",\"attributes\":[3]}]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{OrderApp}}/product",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/D:/Download/tải xuống (2).jpg",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Trà sữa đài loan",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "Thơm ngon trọn vị",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id_cat",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{OrderApp}}/product/3",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"product",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/D:/Download/tải xuống (2).jpg",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Trà sữa đài loan",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "desc",
+									"value": "Thơm ngon trọn vị",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id_cat",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{OrderApp}}/product/9",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"product",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "restore",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{OrderApp}}/product/restore/10",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"product",
+								"restore",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "force",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{OrderApp}}/product/force/9",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"product",
+								"force",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{OrderApp}}/category",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{OrderApp}}/category?search=trà",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"category"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "trà"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OrderApp}}/category/1",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Trà sữa\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OrderApp}}/category",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"desc\": \"Cà phê đậm vị\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OrderApp}}/category/1",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{OrderApp}}/category/3",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"category",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "atttributes",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{OrderApp}}/attribute",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"attribute"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Size\",\r\n    \"desc\": \"Kích thước\",\r\n    \"values\": [\"M\", \"L\", \"XL\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OrderApp}}/attribute",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"attribute"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/D:/Download/ca_phe.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Đen đá mới",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "Thơm ngon trọn vị",
+									"type": "text"
+								},
+								{
+									"key": "id_cat",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "variants",
+									"value": "[{\"price\":150000,\"sale_price\":120000,\"image\":\"\",\"attributes\":[1]},{\"price\":155000,\"sale_price\":125000,\"image\":\"\",\"attributes\":[2]},{\"price\":160000,\"sale_price\":130000,\"image\":\"\",\"attributes\":[3]}]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{OrderApp}}/order",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customer_name\": \"Nguyễn Văn A\",\r\n  \"customer_phone\": \"0901234567\",\r\n  \"customer_address\": \"123 Đường ABC, Quận 1, TP.HCM\",\r\n  \"details\": [\r\n    {\r\n      \"product_id\": 19,\r\n      \"variant_id\": 2,\r\n      \"product_name\": \"Cà phê sữa\",\r\n      \"variant_name\": \"Size Lạnh\",\r\n      \"price\": 35000,\r\n      \"quantity\": 2\r\n    },\r\n    {\r\n      \"product_id\": 19,\r\n      \"variant_id\": 3,\r\n      \"product_name\": \"Trà đào\",\r\n      \"variant_name\": \"Size Lạnh\",\r\n      \"price\": 25000,\r\n      \"quantity\": 1\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OrderApp}}/order",
+							"host": [
+								"{{OrderApp}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

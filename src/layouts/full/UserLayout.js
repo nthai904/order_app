@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { styled, Container, Box } from '@mui/material';
-import Header from './header/Header';
-import Sidebar from './sidebar/Sidebar';
+import { styled, Container, Box, Divider } from '@mui/material';
+import Header from './header/HeaderUser';
 import { Outlet } from "react-router";
 import Topbar from "./header/Topbar";
 import Footer from "./footer/Footer";
@@ -21,7 +20,7 @@ const PageWrapper = styled('div')(() => ({
     backgroundColor: 'transparent',
 }));
 
-const FullLayout = () => {
+const UserLayout = () => {
 
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
@@ -32,18 +31,12 @@ const FullLayout = () => {
       {/* ------------------------------------------- */}
       {/* Topbar */}
       {/* ------------------------------------------- */}
-      
+      <Topbar />
+
+      <Divider />
       <MainWrapper
         className='mainwrapper'
       >
-
-        {/* ------------------------------------------- */}
-        {/* Sidebar */}
-        {/* ------------------------------------------- */}
-        <Sidebar isSidebarOpen={isSidebarOpen}
-          isMobileSidebarOpen={isMobileSidebarOpen}
-          onSidebarClose={() => setMobileSidebarOpen(false)} />
-
 
         {/* ------------------------------------------- */}
         {/* Main Wrapper */}
@@ -55,6 +48,7 @@ const FullLayout = () => {
           {/* Header */}
           {/* ------------------------------------------- */}
           <Header toggleSidebar={() => setSidebarOpen(!isSidebarOpen)} toggleMobileSidebar={() => setMobileSidebarOpen(true)} />
+          <Divider/>
           {/* ------------------------------------------- */}
           {/* PageContent */}
           {/* ------------------------------------------- */}
@@ -80,4 +74,4 @@ const FullLayout = () => {
   );
 };
 
-export default FullLayout;
+export default UserLayout;

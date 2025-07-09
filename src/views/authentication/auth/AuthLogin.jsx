@@ -2,11 +2,8 @@ import React from 'react';
 import {
     Box,
     Typography,
-    FormGroup,
-    FormControlLabel,
     Button,
     Stack,
-    Checkbox
 } from '@mui/material';
 import { Link } from 'react-router';
 
@@ -33,7 +30,7 @@ const AuthLogin = ({ title, subtitle, subtext }) => (
                     fontWeight={600} component="label" htmlFor='password' mb="5px" >Password</Typography>
                 <CustomTextField id="password" type="password" variant="outlined" fullWidth />
             </Box>
-            <Stack justifyContent="space-between" direction="row" alignItems="center" my={2}>
+            {/* <Stack justifyContent="space-between" direction="row" alignItems="center" my={2}>
                 <FormGroup>
                     <FormControlLabel
                         control={<Checkbox defaultChecked />}
@@ -51,9 +48,9 @@ const AuthLogin = ({ title, subtitle, subtext }) => (
                 >
                     Forgot Password ?
                 </Typography>
-            </Stack>
+            </Stack> */}
         </Stack>
-        <Box>
+        <Box mt={2}>
             <Button
                 color="primary"
                 variant="contained"

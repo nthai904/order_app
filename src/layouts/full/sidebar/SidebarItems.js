@@ -10,7 +10,7 @@ import {
 } from "react-mui-sidebar";
 import { IconCircle } from '@tabler/icons-react';
 import Menuitems from "./MenuItems";
-import logoicn from "../../../assets/images/logos/logo-1.jpg";
+import logoicn from "../../../assets/images/logos/logo-1-resized.jpg";
 import Upgrade from "./Upgrade";
 
 const renderMenuItems = (items, pathDirect) => {
@@ -84,12 +84,12 @@ const SidebarItems = () => {
   return (
     <Box sx={{ px: "24px", overflowX: 'hidden' }}>
       <MUI_Sidebar width={"100%"} showProfile={false} themeColor={"#1e4db7"} themeSecondaryColor={'#1a97f51a'}>
-        <Box  sx={{ width: 60, height: 'auto' }}>
+        <Box sx={{ width: 60, height: 'auto' }}>
           <Logo img={logoicn} component={NavLink} to="/" sx={{ width: "120px", height: "120px" }}>Flexy</Logo>
         </Box>
         {renderMenuItems(Menuitems, pathDirect)}
       </MUI_Sidebar>
-  
+
     </Box>
   );
 };

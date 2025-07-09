@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, AppBar, Toolbar, styled, Stack, Button } from '@mui/material';
-import wrappixelLogo from '../../../assets/images/logos/logo-wrappixel.svg';
-import { IconLifebuoy, IconGift, IconBriefcase } from '@tabler/icons-react';
-import { Typography } from '@mui/material';
+import { Box, AppBar, Toolbar, styled, Stack, Button, IconButton } from '@mui/material';
+import wrappixelLogo from '../../../assets/images/logos/logo-1-resized.jpg';
+
 import { Link } from 'react-router-dom';
-import LivePreviewDropdown from './LivePreviewDropdown';
 import { Icon } from "@iconify/react";
+import MenuIcon from '@mui/icons-material/Menu';
+import Drawer from '@mui/material/Drawer';
 
 
 const Topbar = (props) => {
@@ -13,7 +13,7 @@ const Topbar = (props) => {
 
   const AppBarStyled = styled(AppBar)(({ theme }) => ({
     boxShadow: "none",
-    background: "linear-gradient(90deg,#0f0533 0,#1b0a5c 100%)",
+    background: theme.palette.white.main,
     justifyContent: "center",
     [theme.breakpoints.up("lg")]: {
       minHeight: "72px",
@@ -26,7 +26,7 @@ const Topbar = (props) => {
   }));
 
   const GhostButton = styled(Button)(({ theme }) => ({
-    color: theme.palette.primary.contrastText,
+    color: theme.palette.primary.main,
     backgroundColor: "#ffffff00",
     boxShadow: "none",
     borderRadius: "7px",
@@ -39,115 +39,74 @@ const Topbar = (props) => {
     },
   }));
 
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+
   return (
     <AppBarStyled position="sticky" color="default">
-      <ToolbarStyled sx={{ padding: "16px 24px", justifyContent: "space-between", flexDirection: { md: "row", xs: "column" }, gap: "16px", display: { md: "flex" } }}>
-        <Stack
-          spacing={{ xs: 1, sm: 2.5 }}
-          direction="row"
-          useFlexGap
-          sx={{
-            alignItems: "center",
-            display: { xs: "none", md: "flex" }
-          }}
-        >
-          <Link to="https://www.wrappixel.com/" style={{ display: "flex" }}>
-            <img src={wrappixelLogo} width={147} alt="logo" />
+      <ToolbarStyled sx={{ padding: "16px 24px", justifyContent: "space-between", flexDirection: { md: "row", xs: "row" }, gap: "16px", display: "flex" }}>
+        
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Link to="/home" style={{ display: "flex" }}>
+            <img src={wrappixelLogo} width={80} style={{ maxWidth: 147, width: { xs: 80, md: 147 } }} alt="logo" />
           </Link>
-          <Stack
-
-            direction="row"
-            sx={{ gap: "16px", paddingLeft: "20px", borderLeft: "1px solid rgba(255,255,255,.4)", display: { xs: "none", lg: "flex" } }}
-          >
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <Link
-                to="https://www.wrappixel.com/templates/category/react-templates/"
-                style={{ display: "flex", height: "fit-content" }}
-                target="_blank"
-              >
-                <GhostButton sx={{ gap: "8px", padding: "0", fontSize: "16px", ":hover": { color: "#714bff", backgroundColor: "transparent" } }}>
-                  <Icon icon="solar:window-frame-linear" width={20} />
-
-                  Templates
-                </GhostButton>
-              </Link>
-
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <Link
-                to="https://support.wrappixel.com/"
-                style={{ display: "flex", height: "fit-content" }}
-                target="_blank"
-              >
-                <GhostButton sx={{ gap: "8px", padding: "0", fontSize: "16px", ":hover": { color: "#714bff", backgroundColor: "transparent" } }}>
-                  <Icon icon="solar:question-circle-linear" width={20} />
-
-                  Help
-                </GhostButton>
-              </Link>
-
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <Link
-                to="https://www.wrappixel.com/hire-us/"
-                style={{ display: "flex", height: "fit-content" }}
-                target="_blank"
-              >
-                <GhostButton sx={{ gap: "8px", padding: "0", fontSize: "16px", ":hover": { color: "#714bff", backgroundColor: "transparent" } }}>
-                  <Icon icon="solar:case-round-linear" width={20} />
-
-                  Hire Us
-                </GhostButton>
-              </Link>
-
-            </Box>
-          </Stack>
-        </Stack>
+        </Box>
 
         <Stack
           direction="row"
-          sx={{
-            alignItems: "center",
-            flexDirection: { md: "row", xs: "column" }, gap: "16px", display: { md: "flex" }
-          }}
+          sx={{ gap: "16px", display: { xs: "none", lg: "flex" } }}
         >
-          <Typography
-            variant="h6"
-            sx={{ textTransform: "uppercase", fontSize: "14px", background: "linear-gradient(90deg,#fff 0,#8d70f8 100%)", backgroundClip: "text", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", color: (theme) => theme.palette.primary.contrastText }}
-          >
-            Checkout Pro Version
-          </Typography>
-          {/* <DropdownMenu/> */}
-
-          <Stack
-            direction="row"
-            sx={{
-              alignItems: "center",
-              flexDirection: { md: "row", xs: "column" }, gap: "10px", display: { md: "flex" }
-            }}
-          >
-            <Stack
-              direction="row"
-              sx={{
-                alignItems: "center",
-                gap: "10px",
-              }}
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Link
+              to="/home/cart"
+              style={{ display: "flex", height: "fit-content" }}
             >
-              <LivePreviewDropdown />
-
-              <Button sx={{ gap: "8px", borderRadius: "7px", backgroundColor: "#8d70f8", fontSize: "16px", ":hover": { backgroundColor: "#714bff" } }} variant="contained" href="https://www.wrappixel.com/templates/flexy-nextjs-dashboard-material-ui/?ref=376" target="_blank">
-                <Icon icon="solar:crown-linear" width={18} />
-                Get Pro
-              </Button>
-            </Stack>
-
-            <Button sx={{ gap: "8px", borderRadius: "7px", color: "#000000", backgroundColor: "#b3f143", fontSize: "16px", ":hover": { backgroundColor: "#90de03" } }} variant="contained" href="https://www.wrappixel.com/all-access-pass/?ref=376" target="_blank">
-              <Icon icon="solar:bolt-linear" width={18} />
-              All Access Pass
-            </Button>
-          </Stack>
-
+              <GhostButton sx={{ gap: "8px", padding: "0", fontSize: "16px", ":hover": { color: (theme) => theme.palette.primary.main, backgroundColor: "transparent" } }}>
+                <Icon icon="iconoir:cart" width={20} />
+                Giỏ hàng
+              </GhostButton>
+            </Link>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Link
+              to="/home/order-status"
+              style={{ display: "flex", height: "fit-content" }}
+            >
+              <GhostButton sx={{ gap: "8px", padding: "0", fontSize: "16px", ":hover": { color: (theme) => theme.palette.primary.main, backgroundColor: "transparent" } }}>
+                <Icon icon="material-symbols:receipt-long" width={20} />
+                Đơn hàng
+              </GhostButton>
+            </Link>
+          </Box>
         </Stack>
+
+        {/* Hamburger menu trên mobile/tablet */}
+        <Box sx={{ display: { xs: "flex", lg: "none" }, alignItems: "center" }}>
+          <IconButton onClick={() => setDrawerOpen(true)}>
+            <MenuIcon />
+          </IconButton>
+        </Box>
+
+        {/* Drawer cho mobile menu */}
+        <Drawer
+          anchor="right"
+          open={drawerOpen}
+          onClose={() => setDrawerOpen(false)}
+        >
+          <Box sx={{ width: 220, p: 2 }} role="presentation" onClick={() => setDrawerOpen(false)}>
+            <Stack spacing={2}>
+              <Link to="/home/cart" style={{ textDecoration: 'none' }}>
+                <Button startIcon={<Icon icon="iconoir:cart" width={20} />} fullWidth variant="text">
+                  Giỏ hàng
+                </Button>
+              </Link>
+              <Link to="/home/order-status" style={{ textDecoration: 'none' }}>
+                <Button startIcon={<Icon icon="material-symbols:receipt-long" width={20} />} fullWidth variant="text">
+                  Đơn hàng
+                </Button>
+              </Link>
+            </Stack>
+          </Box>
+        </Drawer>
       </ToolbarStyled>
     </AppBarStyled>
   );

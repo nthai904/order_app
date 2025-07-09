@@ -66,44 +66,7 @@ const Header = (props) => {
           <IconMenu2 width='20' height='20' />
         </IconButton>
 
-        <IconButton
-          aria-label='show 4 new mails'
-          color='inherit'
-          aria-controls='notification-menu'
-          aria-haspopup='true'
-          onClick={handleClick}>
-          <Badge variant='dot' color='primary'>
-            <IconBell size='21' stroke='1.5' />
-          </Badge>
-        </IconButton>
-
-        <Menu
-          id='notification-menu'
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-          anchorReference='anchorPosition' // Use custom positioning
-          anchorPosition={
-            menuPosition
-              ? { top: menuPosition.top, left: menuPosition.left }
-              : undefined
-          }
-          slotProps={{
-            paper: {
-              sx: {
-                mt: 1, // Ensures the menu appears slightly below the bell icon
-                boxShadow: 9, // Optional: Improves visibility with a shadow
-                minWidth: '200px', // Adjust width to ensure proper alignment
-              },
-            },
-          }}>
-          <MenuItem onClick={handleClose}>
-            <Typography variant='body1'>Item 1</Typography>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Typography variant='body1'>Item 2</Typography>
-          </MenuItem>
-        </Menu>
+        
 
         <Box flexGrow={1} />
         <Stack spacing={1} direction='row' alignItems='center'>
@@ -114,6 +77,44 @@ const Header = (props) => {
             href='https://www.wrappixel.com/templates/flexy-react-admin-template/?ref=376#demos'>
             Check Pro Template
           </Button> */}
+          {/* <IconButton
+            aria-label='show 4 new mails'
+            color='inherit'
+            aria-controls='notification-menu'
+            aria-haspopup='true'
+            onClick={handleClick}>
+            <Badge variant='dot' color='primary'>
+              <IconBell size='21' stroke='1.5' />
+            </Badge>
+          </IconButton>
+
+          <Menu
+            id='notification-menu'
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+            anchorReference='anchorPosition' 
+            anchorPosition={
+              menuPosition
+                ? { top: menuPosition.top, left: menuPosition.left }
+                : undefined
+            }
+            slotProps={{
+              paper: {
+                sx: {
+                  mt: 1.5, 
+                  boxShadow: 9,
+                  minWidth: '180px', 
+                },
+              },
+            }}>
+            <MenuItem onClick={handleClose}>
+              <Typography variant='body1'>Item 1</Typography>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Typography variant='body1'>Item 2</Typography>
+            </MenuItem>
+          </Menu> */}
           <Profile />
         </Stack>
       </ToolbarStyled>

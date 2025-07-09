@@ -8,7 +8,9 @@ const baselightTheme = createTheme({
     primary: {
       main: "#1e4db7",
       light: "#ddebff",
-      transparent: "#ffffff00"
+      transparent: "#ffffff00", 
+      dark: "#87CEFA",
+      
     },
     secondary: {
       main: "#1a97f5",
@@ -51,7 +53,12 @@ const baselightTheme = createTheme({
       500: '#5A6A85',
       600: '#2A3547',
       700: '#dfe5ef'
-
+    },
+    white: {
+      main: '#ffffff',
+    },
+    black: {
+      main: '#000000',
     },
     text: {
       primary: '#2A3547',
@@ -130,6 +137,14 @@ const baselightTheme = createTheme({
         },
       },
     },
+    MuiInputLabel: {
+      styleOverrides: {
+        asterisk: {
+          color: '#FF0000', // đỏ
+        },
+      },
+    },
+    
   }
 },
 

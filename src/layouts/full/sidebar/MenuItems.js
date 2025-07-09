@@ -106,21 +106,21 @@ const Menuitems = [
         id: uniqueId(),
         title: 'Danh sách sản phẩm',
         icon: IconPoint,
-        href: '',
+        href: '/product',
 
       },
       {
         id: uniqueId(),
         title: 'Danh sách danh mục',
         icon: IconPoint,
-        href: '',
+        href: '/cat-list',
 
       },
       {
         id: uniqueId(),
         title: 'Thuộc tính sản phẩm',
         icon: IconPoint,
-        href: '',
+        href: '/element-product',
       },
       // {
       //   id: uniqueId(),
@@ -140,13 +140,13 @@ const Menuitems = [
     id: uniqueId(),
     title: 'Quản lý nhân viên',
     icon: IconUser,
-    href: '/form-elements/autocomplete',
+    href: '/user',
   },
   {
     id: uniqueId(),
     title: 'Quản lý đơn hàng',
     icon: IconBasket,
-    href: '/form-elements/button',
+    href: '/order',
   },
   // {
   //   id: uniqueId(),
